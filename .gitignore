@@ -1,0 +1,14 @@
+.git
+.svn
+.hg
+.zip
+.gz
+.target
+logs/*
+target/
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.mvn/

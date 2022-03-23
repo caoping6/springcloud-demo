@@ -1,5 +1,5 @@
 server:
-  port: 8902
+  port: ${PORT:8092}
 spring:
   application:
     name: config-server
@@ -7,11 +7,11 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/macrozheng/springcloud-config.git
-          username: macro
-          password: 123456
+          uri: ${GIT_SERVER:https://github.com/caoping6/config-demo.git}
+          label: master
+          search-paths: config-repo
           clone-on-start: true # 开启启动时直接从git获取配置
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: ${EUREKA_SERVER:http://eureka-0:8761/eureka,http://eureka-1:8761/eureka,http://eureka-2:8761/eureka}
